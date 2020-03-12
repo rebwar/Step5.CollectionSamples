@@ -8,16 +8,42 @@ namespace Step5.CollectionSamples
     {
         static void Main(string[] args)
         {
-            int[] array = new int[] { 1, 4, 7, 8 };
-            
+            // UseArray();
+            //JaggedArrays();
             //CarListwithForeach();
             //CarListWithFor();
             //RemoveOddItems();
-            //MyListClass();
+             //MyListClass();
             //QueueSampl();
-            usingDictionary();
+            // usingDictionary();
+             ArrayListSample();
+        }
 
-            // ArrayListSample();
+        private static void UseArray()
+        {
+            int[] array = new int[] { 1, 4, 7, 8 };
+            foreach (var item in array)
+            {
+                Console.Write(item +"  ");
+            }
+        }
+
+        private static void JaggedArrays()
+        {
+            int[][] array =
+            {
+                new int[]{1,2,4},
+                new int[]{4,8,9,74},
+                new int[]{87,545,1000}
+            };
+            foreach (var row in array)
+            {
+                foreach (var item in row)
+                {
+                    Console.Write("{"+item+"}");
+                }
+                Console.WriteLine();
+            }
         }
 
         private static void ArrayListSample()
@@ -190,7 +216,10 @@ namespace Step5.CollectionSamples
                 Console.Write(carList[index] + "  ");
 
             }
-            
+            Console.WriteLine(carList.Capacity);
+            carList.TrimExcess();
+            Console.WriteLine(carList.Capacity);
+
         }
 
         private static void CarListwithForeach()
